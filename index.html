@@ -37,9 +37,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
+								<div class="dropdown">
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">Profile</a>
+											<div class="dropdown-content">
+												<a href="">Account</a>
+												<a href="">Information</a>
+											</div>
+	                </li>
+							</div>
             </ul>
         </div>
     </nav>
@@ -50,7 +56,7 @@
     		<p><strong style="color: #010b1d !important;">Looking for someplace nice?</strong></p>
     		<form action="search.php" method="post">
     			<input type="text" name="search" placeholder="Search.." id="bar"><br/><br/>
-    			<button type="submit" class="btn btn-primary">Search</button>
+    			<button type="submit" class="btn btn-primary search">Search</button>
     		</form>
     	</div>
     </div>
@@ -62,23 +68,14 @@
     <div class="card" style="border: 0px;">
         <!--TO BE LOOPED-->
         <div class="row " style="padding: 100px 0px;">
-          <div class="col-md-6">
-            <div class="card-block px-6">
-              <h4 class="card-title">Place Name </h4>
-              <p class="card-text">
-                  Details To Be Displayed Here
-              </p>
-              <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
-            </div>
-          </div>
           <!-- Carousel start -->
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div id="CarouselTest" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
                 <li data-target="#CarouselTest" data-slide-to="1"></li>
                 <li data-target="#CarouselTest" data-slide-to="2"></li>
-    
+
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -101,25 +98,25 @@
               </div>
             </div>
           </div>
+					<div class="col-md-5">
+            <div class="card-block px-6">
+              <h4 class="card-title">Place Name </h4>
+              <p class="card-text">
+                  Details To Be Displayed Here
+              </p>
+              <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
+            </div>
+          </div>
         </div>
         <div class="row " style="padding: 100px 0px;">
-            <div class="col-md-6">
-              <div class="card-block px-6">
-                <h4 class="card-title">Place Name </h4>
-                <p class="card-text">
-                    Details To Be Displayed Here
-                </p>
-                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
-              </div>
-            </div>
             <!-- Carousel start -->
-            <div class="col-md-5">
+            <div class="col-md-6">
               <div id="CarouselTest" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
                   <li data-target="#CarouselTest" data-slide-to="1"></li>
                   <li data-target="#CarouselTest" data-slide-to="2"></li>
-      
+
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -140,27 +137,27 @@
           <span class="sr-only">Next</span>
         </a>
                 </div>
+              </div>
+            </div>
+						<div class="col-md-5">
+              <div class="card-block px-6">
+                <h4 class="card-title">Place Name </h4>
+                <p class="card-text">
+                    Details To Be Displayed Here
+                </p>
+                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
               </div>
             </div>
           </div>
           <div class="row " style="padding: 100px 0px;">
-            <div class="col-md-6">
-              <div class="card-block px-6">
-                <h4 class="card-title">Place Name </h4>
-                <p class="card-text">
-                    Details To Be Displayed Here
-                </p>
-                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
-              </div>
-            </div>
             <!-- Carousel start -->
-            <div class="col-md-5">
+            <div class="col-md-6">
               <div id="CarouselTest" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
                   <li data-target="#CarouselTest" data-slide-to="1"></li>
                   <li data-target="#CarouselTest" data-slide-to="2"></li>
-      
+
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -183,9 +180,18 @@
                 </div>
               </div>
             </div>
+						<div class="col-md-5">
+              <div class="card-block px-6">
+                <h4 class="card-title">Place Name </h4>
+                <p class="card-text">
+                    Details To Be Displayed Here
+                </p>
+                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
+              </div>
+            </div>
           </div>
         <!--TO BE LOOPED-->
-        
+
 
       </div>
     </div>

@@ -13,10 +13,17 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/Footer-Dark.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
 	<script>
 		  window.onscroll(function () {
-		    var $nav = $("#navbar");
-		    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+		    var nav = document.querySelector('.navbar');
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					nav.classList.add('navbar-scrolled');
+				} else {
+					nav.classList.remove('navbar-scrolled')
+				}
+
 		  });
 	</script>
 </head>
@@ -63,11 +70,14 @@
 
 </header><br/>
 
-<div >
+<!--<h3 class="pb-4 mb-4 font-italic border-bottom" style="margin: 0 50px 0 0;">
+    Best Plots around you!
+</h3>-->
+<div>
 <div class="container">
     <div class="card" style="border: 0px;">
         <!--TO BE LOOPED-->
-        <div class="row " style="padding: 100px 0px;">
+        <div class="row " style="padding: 70px 0px;">
           <!-- Carousel start -->
           <div class="col-md-6">
             <div id="CarouselTest" class="carousel slide" data-ride="carousel">
@@ -197,6 +207,34 @@
     </div>
 </div>
 </div>
+
+<!--Testimonial section-->
+<div class="testimonial">
+	<h2 class="text-center">What Makes Us a Preferred Choice</h2><br/>
+	<div class="row" data-aos="fade-up">
+		<div class="col-6 col-md-4">
+			<div class="choices">
+				<i class="far fa-file-alt fa-6x"></i><br/><br/>
+				<h3>Maximum Choices</h3>
+				<p>15 Lac + & counting. New properties every hour to help buyers find the right home</p>
+			</div>
+		</div>
+		<div class="col-6 col-md-4">
+			<div class="buyers">
+				<i class="far fa-check-circle fa-6x"></i><br/><br/>
+				<h3>Buyers Trust Us</h3>
+				<p>12 million users visit us every month for their buying and renting needs</p>
+			</div>
+		</div>
+		<div class="col-6 col-md-4">
+			<div class="sellers">
+				<i class="far fa-thumbs-up fa-6x"></i><br/><br/>
+				<h3>Seller Prefer Us</h3>
+				<p>27,000 new properties posted daily, making us the biggest platform to sell & rent properties</p>
+			</div>
+		</div>
+	</div>
+</div><br/>
 
  <div class="footer-dark">
         <footer>

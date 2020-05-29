@@ -13,10 +13,17 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/Footer-Dark.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
 	<script>
 		  window.onscroll(function () {
-		    var $nav = $("#navbar");
-		    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+		    var nav = document.querySelector('.navbar');
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					nav.classList.add('navbar-scrolled');
+				} else {
+					nav.classList.remove('navbar-scrolled')
+				}
+
 		  });
 	</script>
 </head>
@@ -37,9 +44,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
+								<div class="dropdown">
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">Profile</a>
+											<div class="dropdown-content">
+												<a href="">Account</a>
+												<a href="">Information</a>
+											</div>
+	                </li>
+							</div>
             </ul>
         </div>
     </nav>
@@ -50,35 +63,29 @@
     		<p><strong style="color: #010b1d !important;">Looking for someplace nice?</strong></p>
     		<form action="search.php" method="post">
     			<input type="text" name="search" placeholder="Search.." id="bar"><br/><br/>
-    			<button type="submit" class="btn btn-primary">Search</button>
+    			<button type="submit" class="btn btn-primary search">Search</button>
     		</form>
     	</div>
     </div>
 
 </header><br/>
 
-<div >
+<!--<h3 class="pb-4 mb-4 font-italic border-bottom" style="margin: 0 50px 0 0;">
+    Best Plots around you!
+</h3>-->
+<div>
 <div class="container">
     <div class="card" style="border: 0px;">
         <!--TO BE LOOPED-->
-        <div class="row " style="padding: 100px 0px;">
-          <div class="col-md-6">
-            <div class="card-block px-6">
-              <h4 class="card-title">Place Name </h4>
-              <p class="card-text">
-                  Details To Be Displayed Here
-              </p>
-              <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
-            </div>
-          </div>
+        <div class="row " style="padding: 70px 0px;">
           <!-- Carousel start -->
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div id="CarouselTest" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
                 <li data-target="#CarouselTest" data-slide-to="1"></li>
                 <li data-target="#CarouselTest" data-slide-to="2"></li>
-    
+
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -101,25 +108,25 @@
               </div>
             </div>
           </div>
+					<div class="col-md-5">
+            <div class="card-block px-6">
+              <h4 class="card-title">Place Name </h4>
+              <p class="card-text">
+                  Details To Be Displayed Here
+              </p>
+              <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
+            </div>
+          </div>
         </div>
         <div class="row " style="padding: 100px 0px;">
-            <div class="col-md-6">
-              <div class="card-block px-6">
-                <h4 class="card-title">Place Name </h4>
-                <p class="card-text">
-                    Details To Be Displayed Here
-                </p>
-                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
-              </div>
-            </div>
             <!-- Carousel start -->
-            <div class="col-md-5">
+            <div class="col-md-6">
               <div id="CarouselTest" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
                   <li data-target="#CarouselTest" data-slide-to="1"></li>
                   <li data-target="#CarouselTest" data-slide-to="2"></li>
-      
+
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -140,27 +147,27 @@
           <span class="sr-only">Next</span>
         </a>
                 </div>
+              </div>
+            </div>
+						<div class="col-md-5">
+              <div class="card-block px-6">
+                <h4 class="card-title">Place Name </h4>
+                <p class="card-text">
+                    Details To Be Displayed Here
+                </p>
+                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
               </div>
             </div>
           </div>
           <div class="row " style="padding: 100px 0px;">
-            <div class="col-md-6">
-              <div class="card-block px-6">
-                <h4 class="card-title">Place Name </h4>
-                <p class="card-text">
-                    Details To Be Displayed Here
-                </p>
-                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
-              </div>
-            </div>
             <!-- Carousel start -->
-            <div class="col-md-5">
+            <div class="col-md-6">
               <div id="CarouselTest" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
                   <li data-target="#CarouselTest" data-slide-to="1"></li>
                   <li data-target="#CarouselTest" data-slide-to="2"></li>
-      
+
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -183,14 +190,51 @@
                 </div>
               </div>
             </div>
+						<div class="col-md-5">
+              <div class="card-block px-6">
+                <h4 class="card-title">Place Name </h4>
+                <p class="card-text">
+                    Details To Be Displayed Here
+                </p>
+                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
+              </div>
+            </div>
           </div>
         <!--TO BE LOOPED-->
-        
+
 
       </div>
     </div>
 </div>
 </div>
+
+<!--Testimonial section-->
+<div class="testimonial">
+	<h2 class="text-center">What Makes Us a Preferred Choice</h2><br/>
+	<div class="row" data-aos="fade-up">
+		<div class="col-6 col-md-4">
+			<div class="choices">
+				<i class="far fa-file-alt fa-6x"></i><br/><br/>
+				<h3>Maximum Choices</h3>
+				<p>15 Lac + & counting. New properties every hour to help buyers find the right home</p>
+			</div>
+		</div>
+		<div class="col-6 col-md-4">
+			<div class="buyers">
+				<i class="far fa-check-circle fa-6x"></i><br/><br/>
+				<h3>Buyers Trust Us</h3>
+				<p>12 million users visit us every month for their buying and renting needs</p>
+			</div>
+		</div>
+		<div class="col-6 col-md-4">
+			<div class="sellers">
+				<i class="far fa-thumbs-up fa-6x"></i><br/><br/>
+				<h3>Seller Prefer Us</h3>
+				<p>27,000 new properties posted daily, making us the biggest platform to sell & rent properties</p>
+			</div>
+		</div>
+	</div>
+</div><br/>
 
  <div class="footer-dark">
         <footer>

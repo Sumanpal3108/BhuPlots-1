@@ -80,23 +80,6 @@ input[type=text] {
 input[type=text]:focus {
   width: 100%;
 }
-<<<<<<< HEAD
-
-.row{
-  padding-left:20px;
-}
-
-.col-3 img{
-  border:1px solid black;
-  width:100%;
-  height: 10vw;
-}
-.main-img img{
-  padding:20px 0px;
-  height: 100vw;
-
-}
-=======
 .nav-link{
   text-decoration: none;
 }
@@ -138,12 +121,17 @@ input[type=text]:focus {
 .row{
   margin: 0 30px 0 0 !important;
 }
-@media screen and (max-width:1000px){
+@media screen and (max-width:719px){
   .testimonial{
     display: none;
   }
 }
+.carousel-caption{
+  display: block !important;
+}
 .text-center{
   padding-top: 30px !important;
 }
->>>>>>> f7dbe479fe3e2b3c20f45146c8ced957dbd8e48e
+.modal-content{
+  background: linear-gradient(to bottom, #0066ff 0%, #99ccff 100%);
+}

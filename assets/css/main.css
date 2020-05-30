@@ -121,11 +121,17 @@ input[type=text]:focus {
 .row{
   margin: 0 30px 0 0 !important;
 }
-@media screen and (max-width:1000px){
+@media screen and (max-width:719px){
   .testimonial{
     display: none;
   }
 }
+.carousel-caption{
+  display: block !important;
+}
 .text-center{
   padding-top: 30px !important;
+}
+.modal-content{
+  background: linear-gradient(to bottom, #0066ff 0%, #99ccff 100%);
 }

@@ -22,12 +22,12 @@
 
     <style>
       .login-box{
-        height: 920px !important;
+        height: 1100px !important;
         width: 500px !important;
       }
       @media screen and (max-width: 600px){
         .login-box{
-          height: 1000px !important;
+          height: 1200px !important;
         }
       }
     </style>
@@ -60,8 +60,16 @@
           <small id="typeHelp" class="form-text text-muted">Enter the type of the property</small>
         </div>
         <div class="form-group">
-          <label for="image1">Enter an image of the Plot</label>
+          <label for="image1">Enter images for the plot</label>
           <input type="file" class="form-control-file" id="image1" name="image1">
+        </div>
+        <div class="form-group">
+          <label for="image2"></label>
+          <input type="file" class="form-control-file" id="image2" name="image2">
+        </div>
+        <div class="form-group">
+          <label for="image1"></label>
+          <input type="file" class="form-control-file" id="image3" name="image3">
         </div>
         <div class="form-group">
           <label for="price">Price</label>

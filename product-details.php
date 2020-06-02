@@ -1,3 +1,8 @@
+<?php
+    include('config.php');
+    session_start();
+    $name = $_SESSION['name'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +17,7 @@
 </head>
 
 <body>
-  <nav id="navbar" style="background-color:rgba(0,0,256, 0.1)" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+  <nav id="navbar" style="background-color:#007bff;" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
     <a class="navbar-brand" href="#"><strong>BhuPlots</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,6 +36,11 @@
         </ul>
     </div>
 </nav>
+<?php
+    $details = "SELECT * FROM plot WHERE name = '$name'";
+    $details_result = mysqli_query($con,$details) or die(mysqli_error($con));
+    while ($details_row = mysqli_fetch_assoc($details_result)) {
+?>
     <div class="row" style="background:url(assets/img/pad.png)">
         <div class="col">
             <div class="x_001_laptop_main_wrap">
@@ -45,16 +55,16 @@
                                     <li data-target="#x_001_laptop" data-slide-to="2"></li>
                                 </ol>
                                 <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active"><img src="https://im.proptiger.com/1/1464434/81/plots-plot-5565115.jpeg" alt="x_001_laptop_01"></div>
+                                    <div class="carousel-item active"><img src="admin/plots-images/<?php echo $details_row['image1']; ?>" alt="x_001_laptop_01"></div>
                                     <div class="carousel-item"><img src="https://im.proptiger.com/1/1464434/81/plots-plot-5565115.jpeg" alt="x_001_laptop_02"></div>
                                     <div class="carousel-item"><img src="https://im.proptiger.com/1/1464434/81/plots-plot-5565115.jpeg" alt="x_001_laptop_03"></div>
                                 </div>
                             </div><a class="carousel-control-prev" href="#x_001_laptop" data-slide="prev"><i class="fa fa-angle-left"></i></a><a class="carousel-control-next" href="#x_001_laptop" data-slide="next"><span class="fa fa-angle-right"></span></a></div>
                     </div>
                     <div class="col-md-5">
-                        <h1>GHATIKIA, BHUBANESWAR</h1>
+                        <h1><?php echo $details_row['location']; ?></h1>
                         <p style="color: black;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc
-                            nec mi eu justo tempor consectetuer. Etiam vitae nisl.</p><a href="#">read more</a></div>
+                            nec mi eu justo tempor consectetuer. Etiam vitae nisl.</p></div>
                 </div>
             </div>
         </div>
@@ -64,29 +74,39 @@
             <div class="card">
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" role="tablist">
-                        <li class="nav-item"><a class="nav-link active" id="item-1-1-tab" data-toggle="tab" role="tab" aria-controls="item-1-1" aria-selected="true" href="#item-1-1">First Item</a></li>
-                        <li class="nav-item"><a class="nav-link" id="item-1-2-tab" data-toggle="tab" role="tab" aria-controls="item-1-2" aria-selected="false" href="#item-1-2">Second Item</a></li>
-                        <li class="nav-item"><a class="nav-link" id="item-1-3-tab" data-toggle="tab" role="tab" aria-controls="item-1-3" aria-selected="false" href="#item-1-3">Third Item</a></li>
+                        <li class="nav-item"><a class="nav-link active" id="item-1-1-tab" data-toggle="tab" role="tab" aria-controls="item-1-1" aria-selected="true" href="#item-1-1">Plot details</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" id="item-1-2-tab" data-toggle="tab" role="tab" aria-controls="item-1-2" aria-selected="false" href="#item-1-2">Second Item</a></li>
+                        <li class="nav-item"><a class="nav-link" id="item-1-3-tab" data-toggle="tab" role="tab" aria-controls="item-1-3" aria-selected="false" href="#item-1-3">Third Item</a></li> -->
                     </ul>
                 </div>
                 <div class="card-body">
                     <div id="nav-tabContent" class="tab-content">
                         <div id="item-1-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="item-1-1-tab">
-                            <h4>First Item Title</h4>
-                            <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button></div>
-                        <div
+                            <p>
+                                <ul>
+                                    <li><?php echo $details_row['name']; ?></li>
+                                    <li><?php echo $details_row['org']; ?></li>
+                                    <li><?php echo $details_row['location']; ?></li>
+                                    <li><?php echo $details_row['type']; ?></li>
+                                    <li><?php echo $details_row['price']; ?></li>
+                                </ul>
+                            </p><button class="btn btn-primary" type="button">Button</button></div>
+                        <!-- <div
                             id="item-1-2" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-2-tab">
                             <h4>Second Item Title</h4>
                             <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button></div>
                     <div
                         id="item-1-3" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab">
                         <h4>Third Item Title</h4>
-                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button></div>
+                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button></div> -->
             </div>
         </div>
     </div>
     </div>
     </div>
+    <?php
+    }
+    ?>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>

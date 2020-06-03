@@ -1,3 +1,10 @@
+<?php
+  include('config.php');
+  session_start();
+  $data = "SELECT * FROM plot";
+  $data_result = mysqli_query($con,$data) or die(mysqli_error($con));
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +13,12 @@
   	<meta name="keywords" content="HTML, CSS, JavaScript">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>BhuPlots</title>
-	<link rel="icon" href="../assets/img/logo.png" type="image/gif" sizes="16x16">
+	<link rel="icon" href="assets/img/logo.png" type="image/gif" sizes="16x16">
 	<!--Bootstrap stylesheets-->
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 	<link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
 	<!--Bootstrap scripts 1-->
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -21,6 +29,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/Footer-Dark.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/album.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/products.css">
 
 	<!--Font awesome and animate css cdn links-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
@@ -136,145 +145,39 @@
     </div>
 
 </header><br/>
-
-<!--<h3 class="pb-4 mb-4 font-italic border-bottom" style="margin: 0 50px 0 0;">
+</div>
+<h3 class="pb-4 mb-4 font-italic border-bottom text-center" style="margin: 0 50px 0 0;">
     Best Plots around you!
-</h3>-->
-<div>
-<div class="container">
-    <div class="card" style="border: 0px;">
-        <!--TO BE LOOPED-->
-        <div class="row " style="padding: 70px 0px;">
-          <!-- Carousel start -->
-          <div class="col-md-6">
-            <div id="CarouselTest" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
-                <li data-target="#CarouselTest" data-slide-to="1"></li>
-                <li data-target="#CarouselTest" data-slide-to="2"></li>
-
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block" src="https://picsum.photos/450/300?image=855" alt="">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block" src="https://picsum.photos/450/300?image=355" alt="">
-                </div>
-                <a class="carousel-control-prev" href="#CarouselTest" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-                <a class="carousel-control-next" href="#CarouselTest" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-              </div>
-            </div>
-          </div>
-					<div class="col-md-5">
-            <div class="card-block px-6">
-              <h4 class="card-title">Place Name </h4>
-              <p class="card-text">
-                  Details To Be Displayed Here
-              </p>
-              <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="row " style="padding: 100px 0px;">
-            <!-- Carousel start -->
-            <div class="col-md-6">
-              <div id="CarouselTest" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
-                  <li data-target="#CarouselTest" data-slide-to="1"></li>
-                  <li data-target="#CarouselTest" data-slide-to="2"></li>
-
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="https://picsum.photos/450/300?image=855" alt="">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="https://picsum.photos/450/300?image=355" alt="">
-                  </div>
-                  <a class="carousel-control-prev" href="#CarouselTest" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-                  <a class="carousel-control-next" href="#CarouselTest" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-                </div>
-              </div>
-            </div>
-						<div class="col-md-5">
-              <div class="card-block px-6">
-                <h4 class="card-title">Place Name </h4>
-                <p class="card-text">
-                    Details To Be Displayed Here
-                </p>
-                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="row " style="padding: 100px 0px;">
-            <!-- Carousel start -->
-            <div class="col-md-6">
-              <div id="CarouselTest" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#CarouselTest" data-slide-to="0" class="active"></li>
-                  <li data-target="#CarouselTest" data-slide-to="1"></li>
-                  <li data-target="#CarouselTest" data-slide-to="2"></li>
-
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="https://picsum.photos/450/300?image=855" alt="">
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="https://picsum.photos/450/300?image=355" alt="">
-                  </div>
-                  <a class="carousel-control-prev" href="#CarouselTest" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-                  <a class="carousel-control-next" href="#CarouselTest" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-                </div>
-              </div>
-            </div>
-						<div class="col-md-5">
-              <div class="card-block px-6">
-                <h4 class="card-title">Place Name </h4>
-                <p class="card-text">
-                    Details To Be Displayed Here
-                </p>
-                <a href="#" class="mt-auto btn btn-primary  ">Read More</a>
-              </div>
-            </div>
-          </div>
-        <!--TO BE LOOPED-->
-
-
-      </div>
-    </div>
-</div>
-</div>
-
+</h3>
+<!--Product cards-->
+		<div class="row">
+			<!-- Product  -->
+<?php
+  while( $row = mysqli_fetch_assoc($data_result) ) {
+	 $name = $row['name'];
+?>
+			<div class="col-md-4 product-grid">
+				<div class="image">
+					<a href="product-details.php"+<?php echo $row['name']; ?>>
+						<img src="admin/plots-images/<?php echo $row['image1']; ?>" class="w-100">
+						<div class="overlay">
+							<div class="detail">View Details</div>
+						</div>
+					</a>
+				</div>
+				<h5 class="text-center"><?php echo $row['name']; ?></h5>
+				<p class="text-center"><?php echo $row['org']; ?></p>
+				<p class="text-center"><?php echo $row['type']; ?></p>
+				<p class="text-center text-muted"><?php echo $row['location']; ?></p>
+				<p class="text-center">Rs. <?php echo $row['price']; ?> onwards</p>
+				<a href="product-details.php" class="btn buy">See more details</a>
+			</div>
+			<!-- ./Product -->
+<?php
+		$_SESSION['name'] = $name;
+		}
+        ?>
+</div><br/>
 <!--Testimonial section-->
 <div class="testimonial">
 	<h2 class="text-center">What Makes Us a Preferred Choice</h2><br/>

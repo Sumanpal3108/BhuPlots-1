@@ -155,10 +155,11 @@
 <?php
   while( $row = mysqli_fetch_assoc($data_result) ) {
 	 $name = $row['name'];
+	 $pid = $row['id'];
 ?>
 			<div class="col-md-4 product-grid">
 				<div class="image">
-					<a href="product-details.php"+<?php echo $row['name']; ?>>
+					<a href="product-details.php?pid=<?php echo $pid;?>">
 						<img src="admin/plots-images/<?php echo $row['image1']; ?>" class="w-100">
 						<div class="overlay">
 							<div class="detail">View Details</div>
@@ -170,11 +171,11 @@
 				<p class="text-center"><?php echo $row['type']; ?></p>
 				<p class="text-center text-muted"><?php echo $row['location']; ?></p>
 				<p class="text-center">Rs. <?php echo $row['price']; ?> onwards</p>
-				<a href="product-details.php" class="btn buy">See more details</a>
+				<a href="product-details.php?pid=<?php echo $pid;?>" class="btn buy">See more details</a>
 			</div>
 			<!-- ./Product -->
 <?php
-		$_SESSION['name'] = $name;
+		$_SESSION['id'] = $pid;
 		}
         ?>
 </div><br/>

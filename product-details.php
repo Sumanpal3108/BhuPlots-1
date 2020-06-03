@@ -1,7 +1,8 @@
 <?php
     include('config.php');
     session_start();
-    $pid = $_SESSION['id'];
+    #$pid = $_SESSION['id'];
+    $pid=$_GET['pid'];
 ?>
 <!DOCTYPE html>
 <html>

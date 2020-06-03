@@ -1,7 +1,7 @@
 <?php
     include('config.php');
     session_start();
-    $name = $_SESSION['name'];
+    $pid = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,9 +37,9 @@
     </div>
 </nav>
 <?php
-    $details = "SELECT * FROM plot WHERE name = '$name'";
+    $details = "SELECT * FROM plot WHERE id = '$pid';";
     $details_result = mysqli_query($con,$details) or die(mysqli_error($con));
-    while ($details_row = mysqli_fetch_assoc($details_result)) {
+    $details_row = mysqli_fetch_assoc($details_result);
 ?>
     <div class="row" style="background:url(assets/img/pad.png)">
         <div class="col">
@@ -56,8 +56,8 @@
                                 </ol>
                                 <div class="carousel-inner" role="listbox">
                                     <div class="carousel-item active"><img src="admin/plots-images/<?php echo $details_row['image1']; ?>" alt="x_001_laptop_01"></div>
-                                    <div class="carousel-item"><img src="https://im.proptiger.com/1/1464434/81/plots-plot-5565115.jpeg" alt="x_001_laptop_02"></div>
-                                    <div class="carousel-item"><img src="https://im.proptiger.com/1/1464434/81/plots-plot-5565115.jpeg" alt="x_001_laptop_03"></div>
+                                    <div class="carousel-item"><img src="admin/plots-images/<?php echo $details_row['image2']; ?>" alt="x_001_laptop_02"></div>
+                                    <div class="carousel-item"><img src="admin/plots-images/<?php echo $details_row['image3']; ?>" alt="x_001_laptop_03"></div>
                                 </div>
                             </div><a class="carousel-control-prev" href="#x_001_laptop" data-slide="prev"><i class="fa fa-angle-left"></i></a><a class="carousel-control-next" href="#x_001_laptop" data-slide="next"><span class="fa fa-angle-right"></span></a></div>
                     </div>
@@ -104,9 +104,6 @@
     </div>
     </div>
     </div>
-    <?php
-    }
-    ?>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
